@@ -1,13 +1,13 @@
 import "./Todo.css";
 
-const Todo = ({ id, name, completed, confidence }) => {
+const Todo = ({ id, name, completed, confidence, toggleTodo, removeTodo }) => {
   console.log({ id, name, completed, confidence });
   return (
     <li>
       <input
         type="checkbox"
         checked={completed}
-        // onChange={() => toggleTodo(id, completed)}
+        onChange={() => toggleTodo(id, completed)}
       />
       <span
         style={{
@@ -17,7 +17,7 @@ const Todo = ({ id, name, completed, confidence }) => {
         {name} (Confidence: {confidence})
       </span>
       {/* Button to remove a todo */}
-      <button>Remove</button>
+      <button onClick={() => removeTodo(id)}>Remove</button>
     </li>
   );
 };

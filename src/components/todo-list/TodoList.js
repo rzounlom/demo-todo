@@ -2,7 +2,7 @@ import "./TodoList.css";
 
 import Todo from "../todo/Todo";
 
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, toggleTodo, removeTodo }) => {
   console.log({ todos });
 
   return (
@@ -13,10 +13,10 @@ const TodoList = ({ todos }) => {
             todo //mapping over todos array and rendering a Todo component for each todo object
           ) => (
             <Todo
-              //   key={todo.id} //setting the key prop to the id of the todo object
+              key={todo.id} //setting the key prop to the id of the todo object
               {...todo} //spreading the todo object as props to the Todo component
-              //   removeTodo={removeTodo} //passing down the removeTodo function as a prop
-              //   toggleTodo={toggleTodo} //passing down the toggleTodo function as a prop
+              removeTodo={removeTodo} //passing down the removeTodo function as a prop
+              toggleTodo={toggleTodo} //passing down the toggleTodo function as a prop
             />
           )
         )
