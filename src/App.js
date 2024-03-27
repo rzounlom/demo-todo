@@ -1,5 +1,7 @@
 import "./App.css";
 
+import TodoList from "./components/todo-list/TodoList";
+import { initialTodos } from "./data";
 import { useState } from "react";
 
 const BaseUrl = "https://64407795792fe886a88f6162.mockapi.io/api/todos";
@@ -63,6 +65,8 @@ function App() {
         />
         <button onClick={addTodo}>Submit</button>
       </div>
+      {/* Component to render the list of todos */}
+      <TodoList todos={initialTodos} />
     </div>
   );
 }
